@@ -20,9 +20,10 @@ import '@ionic/react/css/display.css';
 /* Theme variables */
 import './theme/variables.css';
 import { Route, Redirect } from 'react-router-dom'
-import Home from './pages/Home/Home';
 import { IonMenu, IonHeader, IonToolbar, IonTitle, IonContent, IonList, IonItem } from '@ionic/react';
 import { appsOutline, arrowBackOutline, notificationsOutline, personOutline, settingsOutline} from 'ionicons/icons';
+import Login from './pages/Login/Login';
+import Registro from './pages/Registro/Registro';
 
 const App: React.FC = () => (
   <IonApp>
@@ -69,8 +70,9 @@ const App: React.FC = () => (
         </IonContent>
       </IonMenu>
       <IonRouterOutlet id="Menu">
-        <Route path="/home" component={Home} exact/>
-        <Redirect to ="/home"/>
+        <Route path="/login" component={Login} exact/>
+        <Route path="/register" component={Registro} exact/>
+        <Redirect to ="/register"/>
       </IonRouterOutlet>
     </IonReactRouter>
   </IonApp>
